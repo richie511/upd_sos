@@ -8,7 +8,7 @@
 <style>
 body,html {
 	background-image : url(motif1.png);
-	background-size : cover;
+	background-size : 100% 100%;
 	overflow-x:hidden;overflow-y:hidden;
     -khtml-user-drag: none; 
     -moz-user-drag: none; 
@@ -432,7 +432,7 @@ li:last-child {
 	function send_data(r){
 				var phone_num = window.localStorage.getItem("Key");
 				
-				var url = "http://tokodumai.com/simpan_sos.php?sender="+encodeURIComponent(phone_num)+"&tujuan="+encodeURIComponent(r);
+				var url = "http://localhost/ratusima_android/simpan_sos.php?sender="+encodeURIComponent(phone_num)+"&tujuan="+encodeURIComponent(r);
 				$.ajax({
 					url		: url,
 					type	: "GET",
@@ -508,7 +508,6 @@ li:last-child {
 	<a class="tombolya" onclick="set()" >SIMPAN</a>
 </div>
 	<div id="modal">
-	<div style="padding-top:10px"></div>
 		<div id="texta">
 			<ul>
 				<li style="color:black">Terimakasih telah menggunakan Aplikasi S.O.S Kelurahan STDI. Pilih Nomor Penting dalam daftar berikut : </li>
