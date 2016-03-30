@@ -1,0 +1,552 @@
+<!doctype html>
+<html>
+<head>
+<title>SOS STDI DUMAI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="jquery-1.10.2.min.js"></script>
+<script src="jquery.mobile-1.4.5.min.js"></script>
+<style>
+body,html {
+	background-image : url(motif1.png);
+	background-size : cover;
+	overflow-x:hidden;overflow-y:hidden;
+    -khtml-user-drag: none; 
+    -moz-user-drag: none; 
+    -ms-user-drag: none; 
+    user-drag: none; 
+    -webkit-user-drag: none; 
+	  
+    -webkit-font-smoothing: antialiased; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+    -webkit-background-size: 100%; 
+    -moz-background-size: 100%; 
+    -o-background-size: 100%;
+	background-size : 100%; 
+    -webkit-background-size: cover; 
+    -moz-background-size: cover; 
+    -o-background-size: cover;
+	background-size : cover; 
+    -webkit-user-select: none; 
+    -webkit-touch-callout: none; 
+    -webkit-tap-highlight: rgba(0,0,0,0); 
+    -webkit-user-select: none; 
+    -webkit-touch-callout: none; 
+    -webkit-tap-highlight: rgba(0,0,0,0); 
+	
+}
+
+  a {
+    color:#fff;
+    text-decoration:none;
+  }
+  a:hover {
+    color:#FF5E99;
+  }
+  a:link { -webkit-tap-highlight-color: #FF5E99; } 
+
+  #main {
+  	margin: auto; 
+	}
+
+  #outer-circle {
+  	-webkit-box-shadow: 0 0 50px 10px #453D9B;
+  	-moz-box-shadow: 0 0 50px 10px #453D9B;
+  	box-shadow: 0 0 50px 10px #453D9B;
+  	border: 10px solid #ECEBFA;
+  	border-top-color:#746EBB;
+  	margin: 20% auto;
+  	text-align:center;
+  	background: -webkit-linear-gradient(top, #ffffff 48%, #ecebfa 49%, #ecebfa 51%, #fff 52%);
+  	background: -moz-linear-gradient(top, #ffffff 48%, #ecebfa 49%, #ecebfa 51%, #fff 52%);
+  	background: linear-gradient(to bottom, #ffffff 48%, #ecebfa 49%, #ecebfa 51%, #fff 52%);
+  	width: 220px;
+  	height: 220px;
+	
+  	-webkit-border-radius: 220px;
+  	-moz-border-radius: 220px;
+  	border-radius: 220px;
+	
+  	-webkit-animation:turning_cw 5s infinite;
+  	-moz-animation:turning_cw 5s infinite;
+  	animation:turning_cw 5s infinite;
+  	position:relative;
+  	opacity: 0.7; }
+  	
+  #content:hover {
+	cursor:pointer;
+	
+	-webkit-animation: pulse2 2s linear infinite;
+	-moz-animation: pulse2 2s linear infinite;
+	-ms-animation: pulse2 2s linear infinite;
+	animation: pulse2 2s linear infinite;
+  }
+  #outer-circle:hover {
+  	-webkit-box-shadow: 0 0 100px 15px #453D9B;
+  	-moz-box-shadow: 0 0 100px 15px #453D9B;
+  	box-shadow: 0 0 100px 15px #453D9B; }
+  	
+  #inner-circle {
+  	border: 10px solid #ECEBFA;
+  	border-left-color:#746EBB;
+  	border-right-color:#746EBB;
+	
+  	-webkit-transform: rotate(360deg);
+  	-moz-transform: rotate(360deg);
+  	transform: rotate(360deg);
+	
+  	position:absolute;
+	
+  	background: -webkit-linear-gradient(top, #ecebfa 48%, #746EBB 49%, #746EBB 51%, #ECEBFA 52%);
+  	background: -moz-linear-gradient(top, #ecebfa 48%, #746EBB 49%, #746EBB 51%, #ECEBFA 52%);
+  	background: linear-gradient(to bottom, #ecebfa 48%, #746EBB 49%, #746EBB 51%, #ECEBFA 52%);
+	
+  	margin: 10px;
+  	width: 180px;
+  	height: 180px;
+	
+  	-webkit-border-radius: 180px;
+  	-moz-border-radius: 180px;
+  	border-radius: 180px;
+	
+  	-webkit-animation:turning_acw 3s infinite;
+  	-moz-animation:turning_acw 3s infinite;
+  	animation:turning_acw 3s infinite; }
+
+  #center-circle {
+  	border: 10px solid #746EBB;
+  	border-bottom-color:#ECEBFA;
+  	-webkit-transform: rotate(360deg); 
+  	-moz-transform: rotate(360deg); 
+  	transform: rotate(360deg); 
+  	position:absolute;
+
+  	background: -webkit-linear-gradient(top, #fff 48%, #ECEBFA 49%, #ECEBFA 51%, #fff 52%);
+  	background: -moz-linear-gradient(top, #fff 48%, #ECEBFA 49%, #ECEBFA 51%, #fff 52%);
+  	background: linear-gradient(to bottom, #fff 48%, #ECEBFA 49%, #ECEBFA 51%, #fff 52%);
+	
+  	margin: 10px;
+  	width: 140px;
+  	height: 140px;
+	
+  	-webkit-border-radius: 140px;
+  	-moz-border-radius: 140px;
+  	border-radius: 140px;
+	
+  	-webkit-animation:turning_cw 5s infinite;
+  	-moz-animation:turning_cw 5s infinite;
+  	animation:turning_cw 5s infinite; }
+
+  #content {
+  	position:absolute;
+  	top: 10px;
+  	left: 10px;
+  	width: 120px;
+  	height: 120px;
+  	-webkit-border-radius: 140px;
+  	-moz-border-radius: 140px;
+  	border-radius: 140px;
+  	background: #a0110c; 
+  	text-align:center;
+  	line-height: 120px;
+  	font-size: 30px;
+  	color:#746EBB;
+  	text-shadow: 0 2px 2px #000;
+  	font-weight:bold; }
+
+  @-webkit-keyframes aura {
+  	0%{
+  		text-shadow: 0 2px 2px #000; }
+  		
+  	50%{
+  		text-shadow: 0 10px 10px #000;
+  		line-height: 190px; }
+  		
+  	100%{
+  		text-shadow: 0 2px 10px #000; }
+  }
+
+  @-webkit-keyframes turning_cw {
+  	0%{
+  		-webkit-transform: rotate(0deg); }
+  	100%{
+  		-webkit-transform: rotate(360deg); }
+  }
+  
+  @-webkit-keyframes turning_acw {
+  	0%{
+  		-webkit-transform: rotate(360deg); }
+  	100%{
+  		-webkit-transform: rotate(0deg); }
+  }
+
+  @-moz-keyframes aura {
+  	0%{
+  		text-shadow: 0 2px 2px #000; }
+  		
+  	50%{
+  		text-shadow: 0 10px 10px #000;
+  		line-height: 190px; }
+  		
+  	100%{
+  		text-shadow: 0 2px 10px #000; }
+  }
+
+  @-moz-keyframes turning_cw {
+  	0%{
+  		-moz-transform: rotate(0deg); }
+  	100%{
+  		-moz-transform: rotate(360deg); }
+  }
+  
+  @-moz-keyframes turning_acw {
+  	0%{
+  		-moz-transform: rotate(360deg); }
+  	100%{
+  		-moz-transform: rotate(0deg); }
+  }
+
+  @keyframes aura {
+  	0%{
+  		text-shadow: 0 2px 2px #000; }
+  		
+  	50%{
+  		text-shadow: 0 10px 10px #000;
+  		line-height: 190px; }
+  		
+  	100%{
+  		text-shadow: 0 2px 10px #000; }
+  }
+
+  @keyframes turning_cw {
+  	0%{
+  		transform: rotate(0deg); }
+  	100%{
+  		transform: rotate(360deg); }
+  }
+  
+  @keyframes turning_acw {
+  	0%{
+  		transform: rotate(360deg); }
+  	100%{
+  		transform: rotate(0deg); }
+  }
+  
+.pulse2 {
+	-webkit-animation: pulse2 1s linear infinite;
+	-moz-animation: pulse2 1s linear infinite;
+	-ms-animation: pulse2 1s linear infinite;
+	animation: pulse2 1s linear infinite;
+}
+
+@keyframes "pulse2" {
+ 0% {
+    -webkit-transform: scale(1.1);
+   	-moz-transform: scale(1.1);
+   	-o-transform: scale(1.1);
+   	-ms-transform: scale(1.1);
+   	transform: scale(1.1);
+ }
+ 50% {
+    -webkit-transform: scale(0.8);
+   	-moz-transform: scale(0.8);
+   	-o-transform: scale(0.8);
+   	-ms-transform: scale(0.8);
+   	transform: scale(0.8);
+ }
+ 100% {
+    -webkit-transform: scale(1);
+   	-moz-transform: scale(1);
+   	-o-transform: scale(1);
+   	-ms-transform: scale(1);
+   	transform: scale(1);
+ }
+
+}
+
+@-moz-keyframes pulse2 {
+ 0% {
+   -moz-transform: scale(1.1);
+   transform: scale(1.1);
+ }
+ 50% {
+   -moz-transform: scale(0.8);
+   transform: scale(0.8);
+ }
+ 100% {
+   -moz-transform: scale(1);
+   transform: scale(1);
+ }
+
+}
+
+@-webkit-keyframes "pulse2" {
+ 0% {
+   -webkit-transform: scale(1.1);
+   transform: scale(1.1);
+ }
+ 50% {
+   -webkit-transform: scale(0.8);
+   transform: scale(0.8);
+ }
+ 100% {
+   -webkit-transform: scale(1);
+   transform: scale(1);
+ }
+
+}
+
+@-ms-keyframes "pulse2" {
+ 0% {
+   -ms-transform: scale(1.1);
+   transform: scale(1.1);
+ }
+ 50% {
+   -ms-transform: scale(0.8);
+   transform: scale(0.8);
+ }
+ 100% {
+   -ms-transform: scale(1);
+   transform: scale(1);
+ }
+
+}
+
+#modal {
+	display:    none;
+	position:   fixed;
+	z-index:    1000;
+	top:        0;
+	left:       0;
+	height:     100%;
+	width:      100%;
+	background-image : url(motif1.png);
+	background-size : cover;
+	}
+
+#texta { 
+	font-family:'Open Sans', Arial, sans-serif;
+	padding-left : 5px;
+	padding-bottom : 10px;
+	padding-bottom : 10px;
+	border-radius:10px 10px 10px 10px;
+	color : #fff;
+	font-weight:bold;
+			
+}
+#nav_fr {
+	list-style:none;
+	color : #453D9B;
+	font-weight:bold;
+}
+.close_mod {
+	top:10px;
+	right:0px;
+	width:100%;
+	font-weight:bolder;
+	margin-right:10px;
+	position:relative;
+	background: linear-gradient(141deg, blue, silver, green);
+	padding-right: 10px; 
+	padding-left: 10px; 
+	padding-top: 10px; 
+	padding-bottom: 10px; 
+	cursor:pointer;
+		
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+ input[type="text"],input[type="button"]{
+ text-align : center;
+ padding-left:10%;
+ padding-right:10%;
+ margin-top:60%;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: none;
+  height:50px;
+  border-bottom: 1px solid #999;
+  outline: none;
+  color: #333;
+  -webkit-transition: border-color .5s ease;
+  transition: border-color .5s ease;
+  position:absolut;
+}
+.tombolya {
+	padding-top: 10px; 
+	padding-bottom: 10px;
+	background: #09F;
+	width:100%;
+	text-align:center;
+	color:#fff;
+	font-weight:bold;
+	cursor:pointer;
+	float : left;
+}
+ul {
+	list-style-type : none;
+	margin:0;
+	padding:0;
+	width:100%;
+	background-color : #f1f1f1;
+	border : 1px solid #555;
+}
+li a {
+	display:block;
+	color : #000;
+	padding : 4px 8px;
+	text-decoration : none;
+}
+li a.active {
+	background-color:#4CAF50;
+	color : #fff;
+}
+li a:hover:not(.active) {
+	background-color:#555;
+	color : #fff;
+}
+li {
+	text-align : left;
+	border-bottom : 1px solid $555;
+	
+}
+li:last-child {
+	border-bottom : none;
+}
+	</style>
+	<script>
+	$(document).on("mobileinit", function(){
+			  //apply overrides here
+			  $.mobile.allowCrossDomainPages = true;
+			  $.support.cors = true;
+			
+			});
+	function send_data(r){
+				var phone_num = window.localStorage.getItem("Key");
+				
+				var url = "http://tokodumai.com/simpan_sos.php?sender="+encodeURIComponent(phone_num)+"&tujuan="+encodeURIComponent(r);
+				$.ajax({
+					url		: url,
+					type	: "GET",
+					crossDomain : true,
+					success: function(data) {
+						alert(data);
+					}
+				});
+				
+			}
+	$(function(){
+		$( "#content" ).bind( "taphold", tapholdHandler );
+		function tapholdHandler( event ){
+			$( event.target ).addClass( "taphold" );
+			$("#modal").show();
+		}
+	});
+	function tutup(){
+		$("#modal").fadeOut();
+		clearInterval(intval);
+		$( "#content" ).unbind( "taphold", tapholdHandler );
+		$( event.target ).removeClass( "taphold" );
+	}
+	function get()
+	{
+		var phone_num = window.localStorage.getItem("Key");
+	}
+	
+	function set()
+	{
+		var textToWrite = $("#nomor_hp").val();
+		if (textToWrite.length < 12) {
+			$("#nomor_hp").focus();
+		}
+		else {
+			window.localStorage.setItem("Key", textToWrite);
+			$("#main").show();
+			$("#nama").hide();
+		}
+		
+	}
+	function isNumberKey(evt)
+			{
+				var charCode = (evt.which) ? evt.which : event.keyCode
+				if (charCode > 31 && (charCode < 48 || charCode > 57))
+				   return false;
+		       
+				return true;
+	}
+	window.onload = function cek(){
+			var phone_num = window.localStorage.getItem("Key");
+			if (phone_num == null) {
+				$("#nama").show();
+				$("#main").hide();
+			}
+			else {
+				$("#main").show();
+				$("#nama").hide();
+			}
+	}
+	function del()
+	{
+	window.localStorage.removeItem("Key");
+	}
+	</script>
+</head>
+<body oncontextmenu="return false" ondragstart="return false"  onselect="return false">
+
+  <div style="padding-top:30%"></div>
+  <div id="container">       
+  <div id="nama">
+	<input type="text" id="nomor_hp" onkeypress="return isNumberKey(event);" maxlength="12" placeholder="Masukkan No. Handphone" required>
+	<a class="tombolya" onclick="set()" >SIMPAN</a>
+</div>
+	<div id="modal">
+	<div style="padding-top:10px"></div>
+		<div id="texta">
+			<ul>
+				<li style="color:black">Terimakasih telah menggunakan Aplikasi S.O.S Kelurahan STDI. Pilih Nomor Penting dalam daftar berikut : </li>
+			</ul>
+			<ul id="nav_fr">
+				<li><a  onclick="send_data('Bhabinkamtibmas');" href="tel:085271745043">Bhabinkamtibmas</a></li>
+				<li><a  onclick="send_data('Pemadam Kebakaran');" href="tel:076538208">Pemadam Kebakaran</a></li>
+				<li><a  onclick="send_data('Unit Lakalantas');" href="tel:085271227033">Unit Lakalantas</a></li>
+				<li><a  onclick="send_data('Satlantas');" href="tel:076531266">Satlantas</a></li>
+				<li><a  onclick="send_data('Polsek Dumai Barat');" href="tel:081378946000">Polsek Dumai Barat</a></li>
+				<li><a  onclick="send_data('Patroli Samapta');" href="tel:081378594800">Patroli Samapta</a></li>
+				<li><a  onclick="send_data('Polresta Dumai');" href="tel:076531007">Polresta Dumai</a></li>
+				<li><a  onclick="send_data('PMI');" href="tel:076537838">PMI</a></li>
+				<li><a  onclick="send_data('RSUD Dumai');" href="tel:076538367">RSUD Dumai</a></li>
+				<li><a  onclick="send_data('RS. Bhayangkara Dumai');" href="tel:076538367">RS. Bhayangkara Dumai</a></li>
+				<li><a  onclick="send_data('PLN Dumai');" href="tel:076537123">PLN Dumai</a></li>
+				<li><a  onclick="send_data('KPPP Dumai');" href="tel:076531690">KPPP Dumai</a></li>
+				<li><a  onclick="send_data('Lanal Dumai');" href="tel:076531105">Lanal Dumai</a></li>
+				<li><a  onclick="send_data('Kodim 0303 Dumai');" href="tel:076531303">Kodim 0303 Dumai</a></li>
+				<li><a  onclick="send_data('Penjagaan Dumai');" href="tel:076531110">Penjagaan Dumai</a></li>
+			</ul>
+			<a class="close_mod" onclick="tutup()">Tutup</a> 
+		</div>
+		</div>
+	</div>
+  <div id="container">    
+    <div id="main">
+      <div id="outer-circle">
+        <div id="inner-circle">
+          <div id="center-circle">
+            <div id="content" ><strong>S O S</strong></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  
+  </div>
+  
+</body>
+</html>
