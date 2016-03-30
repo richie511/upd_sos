@@ -432,7 +432,7 @@ li:last-child {
 	function send_data(r){
 				var phone_num = window.localStorage.getItem("Key");
 				
-				var url = "http://localhost/ratusima_android/simpan_sos.php?sender="+encodeURIComponent(phone_num)+"&tujuan="+encodeURIComponent(r);
+				var url = "http://tokodumai.com/simpan_sos.php?sender="+encodeURIComponent(phone_num)+"&tujuan="+encodeURIComponent(r);
 				$.ajax({
 					url		: url,
 					type	: "GET",
