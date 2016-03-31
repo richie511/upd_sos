@@ -43,9 +43,9 @@ body,html {
     text-decoration:none;
   }
   a:hover {
-    color:#FF5E99;
+    color:#ff3a4d;
   }
-  a:link { -webkit-tap-highlight-color: #FF5E99; } 
+  a:link { -webkit-tap-highlight-color: #514dd9; } 
 
   #main {
   	margin: auto; 
@@ -57,6 +57,7 @@ body,html {
   	box-shadow: 0 0 50px 10px #453D9B;
   	border: 10px solid #ECEBFA;
   	border-top-color:#746EBB;
+  	border-bottom-color:#746EBB;
   	margin: 20% auto;
   	text-align:center;
   	background: -webkit-linear-gradient(top, #ffffff 48%, #ecebfa 49%, #ecebfa 51%, #fff 52%);
@@ -99,9 +100,9 @@ body,html {
 	
   	position:absolute;
 	
-  	background: -webkit-linear-gradient(top, #ecebfa 48%, #746EBB 49%, #746EBB 51%, #ECEBFA 52%);
-  	background: -moz-linear-gradient(top, #ecebfa 48%, #746EBB 49%, #746EBB 51%, #ECEBFA 52%);
-  	background: linear-gradient(to bottom, #ecebfa 48%, #746EBB 49%, #746EBB 51%, #ECEBFA 52%);
+  	background: -webkit-linear-gradient(top, #a0110c 48%, #a0110c 49%, #a0110c 51%, #a0110c 52%);
+  	background: -moz-linear-gradient(top, #a0110c 48%, #a0110c 49%, #a0110c 51%, #a0110c 52%);
+  	background: linear-gradient(to bottom, #a0110c 48%, #a0110c 49%, #a0110c 51%, #a0110c 52%);
 	
   	margin: 10px;
   	width: 180px;
@@ -116,16 +117,16 @@ body,html {
   	animation:turning_acw 3s infinite; }
 
   #center-circle {
-  	border: 10px solid #746EBB;
-  	border-bottom-color:#ECEBFA;
+  	border: 10px solid #a0110c;
+  	border-bottom-color:#a0110c;
   	-webkit-transform: rotate(360deg); 
   	-moz-transform: rotate(360deg); 
   	transform: rotate(360deg); 
   	position:absolute;
 
-  	background: -webkit-linear-gradient(top, #fff 48%, #ECEBFA 49%, #ECEBFA 51%, #fff 52%);
-  	background: -moz-linear-gradient(top, #fff 48%, #ECEBFA 49%, #ECEBFA 51%, #fff 52%);
-  	background: linear-gradient(to bottom, #fff 48%, #ECEBFA 49%, #ECEBFA 51%, #fff 52%);
+  	background: -webkit-linear-gradient(top, #a0110c 48%, #a0110c 49%, #a0110c 51%, #a0110c 52%);
+  	background: -moz-linear-gradient(top, #a0110c 48%, #a0110c 49%, #a0110c 51%, #a0110c 52%);
+  	background: linear-gradient(to bottom, #a0110c 48%, #a0110c 49%, #a0110c 51%, #a0110c 52%);
 	
   	margin: 10px;
   	width: 140px;
@@ -391,6 +392,18 @@ body,html {
 	cursor:pointer;
 	float : left;
 }
+.desk {
+	padding-top: 10px; 
+	padding-bottom: 10px;
+	background: #f3ba40;
+	width:100%;
+	text-align:center;
+	color:#a0110c;
+	font-weight:bold;
+	cursor:pointer;
+	float : left;
+	font-family:'Open Sans', Arial, sans-serif;
+}
 ul {
 	list-style-type : none;
 	margin:0;
@@ -500,13 +513,13 @@ li:last-child {
 	</script>
 </head>
 <body oncontextmenu="return false" ondragstart="return false"  onselect="return false">
-
-  <div style="padding-top:30%"></div>
+   <span class="desk" style="margin:0"><strong>S.O.S EMERGENCY <BR>KELURAHAN STDI DUMAI</strong></span>
+  <div style="padding-top:25%"></div>
   <div id="container">       
   <div id="nama">
 	<input type="text" id="nomor_hp" onkeypress="return isNumberKey(event);" maxlength="12" placeholder="Masukkan No. Handphone" required>
 	<a class="tombolya" onclick="set()" >SIMPAN</a>
-</div>
+  </div>
 	<div id="modal">
 		<div id="texta">
 			<ul>
