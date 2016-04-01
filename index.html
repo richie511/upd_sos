@@ -7,8 +7,7 @@
 <script src="jquery.mobile-1.4.5.min.js"></script>
 <style>
 body,html {
-	background-image : url(motif1.png);
-	background-size : 100% 100%;
+	background-color : #453D9B;
 	overflow-x:hidden;overflow-y:hidden;
     -khtml-user-drag: none; 
     -moz-user-drag: none; 
@@ -43,7 +42,7 @@ body,html {
     text-decoration:none;
   }
   a:hover {
-    color:#ff3a4d;
+    background:#257080;
   }
   a:link { -webkit-tap-highlight-color: #514dd9; } 
 
@@ -315,26 +314,27 @@ body,html {
 
 }
 
-#modal {
-	display:    none;
-	position:   fixed;
-	z-index:    1000;
-	top:        0;
-	left:       0;
+.pagetap {
+    padding-top:10%;
+    padding-bottom:10%;
+	margin-top:50%;
+	width: 100%;
+	top:        center;
+	bottom:       center;
 	height:     100%;
 	width:      100%;
-	background-image : url(motif1.png);
-	background-size : cover;
+	font-family:'Open Sans', Arial, sans-serif;
 	}
 
-#texta { 
+.texta { 
+    padding-top:10%;
+    padding-bottom:10%;
+	width: 100%;
+	top:        center;
+	bottom:       center;
+	height:     100%;
+	width:      100%;
 	font-family:'Open Sans', Arial, sans-serif;
-	padding-left : 5px;
-	padding-bottom : 10px;
-	padding-bottom : 10px;
-	border-radius:10px 10px 10px 10px;
-	color : #fff;
-	font-weight:bold;
 			
 }
 #nav_fr {
@@ -391,14 +391,30 @@ body,html {
 	font-weight:bold;
 	cursor:pointer;
 	float : left;
+	font-family:calibri;
+}
+.linklin {
+	background: linear-gradient(141deg, #b63b1e, #021110, green);
+	margin-top: 5px; 
+	margin-right: 5px; 
+	margin-bottom: 5px; 
+	padding-left: 10px; 
+	padding-bottom: 10px;
+	text-align:center;
+	color:#1ef3eb;
+	font-weight:bold;
+	cursor:pointer;
+	float : left;
+	width:100%;
+	font-family:calibri;
 }
 .desk {
 	padding-top: 10px; 
 	padding-bottom: 10px;
-	background: #f3ba40;
+	background: #6d26e4;
 	width:100%;
 	text-align:center;
-	color:#a0110c;
+	color:#fff;
 	font-weight:bold;
 	cursor:pointer;
 	float : left;
@@ -461,6 +477,8 @@ li:last-child {
 		function tapholdHandler( event ){
 			$( event.target ).addClass( "taphold" );
 			$("#modal").show();
+			$("#main").hide();
+			
 		}
 	});
 	function tutup(){
@@ -496,6 +514,8 @@ li:last-child {
 				return true;
 	}
 	window.onload = function cek(){
+		$("#modal").hide();
+		$("#nomor").hide();
 			var phone_num = window.localStorage.getItem("Key");
 			if (phone_num == null) {
 				$("#nama").show();
@@ -510,42 +530,50 @@ li:last-child {
 	{
 	window.localStorage.removeItem("Key");
 	}
+	function home()
+	{
+		$("#modal").hide();
+		$("#nomor").hide();
+			var phone_num = window.localStorage.getItem("Key");
+			if (phone_num == null) {
+				$("#nama").show();
+				$("#main").hide();
+			}
+			else {
+				$("#main").show();
+				$("#nama").hide();
+			}
+	}
+	function selanjutnya()
+	{
+		$("#modal").hide();
+		$("#nomor").show();
+	}
 	</script>
 </head>
 <body oncontextmenu="return false" ondragstart="return false"  onselect="return false">
-   <span class="desk" style="margin:0"><strong>S.O.S EMERGENCY <BR>KELURAHAN STDI DUMAI</strong></span>
+   <span class="tombolya" style="margin:0"><strong>S.O.S EMERGENCY <BR>KELURAHAN STDI DUMAI</strong></span>
   <div style="padding-top:25%"></div>
-  <div id="container">       
   <div id="nama">
 	<input type="text" id="nomor_hp" onkeypress="return isNumberKey(event);" maxlength="12" placeholder="Masukkan No. Handphone" required>
 	<a class="tombolya" onclick="set()" >SIMPAN</a>
   </div>
-	<div id="modal">
-		<div id="texta">
-			<ul>
-				<li style="color:black">Terimakasih telah menggunakan Aplikasi S.O.S Kelurahan STDI. Pilih Nomor Penting dalam daftar berikut : </li>
+  <div id="modal" class="pagetap">
+			<div class="tombolya" style="background:#24fcf9;color:#000000">Terimakasih telah menggunakan Aplikasi S.O.S EMERGENCY Kelurahan STDI.</div>
+			<a class="tombolya" style="text-align:right;" onclick="selanjutnya()">Selanjutnya >> </a></a></a>
+  </div>
+  <div id="nomor" class="texta">
+			<div class="tombolya" style="background:#24fcf9;color:#000000">Berikut Nomor-Nomor Penting : </div>
+			<ul >
+				<li><a  class="linklin" onclick="send_data('Bhabinkamtibmas');" href="tel:085271745043">Bhabinkamtibmas</a></li>
+				<li><a  class="linklin" onclick="send_data('Polsek Dumai Barat');" href="tel:081378946000">Polsek Dumai Barat</a></li>
+				<li><a  class="linklin" onclick="send_data('BPBD Dumai');" href="tel:076537622">BPBD Dumai</a></li>
+				<li><a  class="linklin" onclick="send_data('Pemadam Kebakaran');" href="tel:076538208">Pemadam Kebakaran</a></li>
+				<li><a  class="linklin" onclick="send_data('RSUD Dumai');" href="tel:076538367">RSUD Dumai</a></li>
+				<li><a  class="linklin" onclick="send_data('Trantib Kelurahan');" href="tel:081365100973">Trantib Kelurahan</a></li>
 			</ul>
-			<ul id="nav_fr">
-				<li><a  onclick="send_data('Bhabinkamtibmas');" href="tel:085271745043">Bhabinkamtibmas</a></li>
-				<li><a  onclick="send_data('Pemadam Kebakaran');" href="tel:076538208">Pemadam Kebakaran</a></li>
-				<li><a  onclick="send_data('Unit Lakalantas');" href="tel:085271227033">Unit Lakalantas</a></li>
-				<li><a  onclick="send_data('Satlantas');" href="tel:076531266">Satlantas</a></li>
-				<li><a  onclick="send_data('Polsek Dumai Barat');" href="tel:081378946000">Polsek Dumai Barat</a></li>
-				<li><a  onclick="send_data('Patroli Samapta');" href="tel:081378594800">Patroli Samapta</a></li>
-				<li><a  onclick="send_data('Polresta Dumai');" href="tel:076531007">Polresta Dumai</a></li>
-				<li><a  onclick="send_data('PMI');" href="tel:076537838">PMI</a></li>
-				<li><a  onclick="send_data('RSUD Dumai');" href="tel:076538367">RSUD Dumai</a></li>
-				<li><a  onclick="send_data('RS. Bhayangkara Dumai');" href="tel:076538367">RS. Bhayangkara Dumai</a></li>
-				<li><a  onclick="send_data('PLN Dumai');" href="tel:076537123">PLN Dumai</a></li>
-				<li><a  onclick="send_data('KPPP Dumai');" href="tel:076531690">KPPP Dumai</a></li>
-				<li><a  onclick="send_data('Lanal Dumai');" href="tel:076531105">Lanal Dumai</a></li>
-				<li><a  onclick="send_data('Kodim 0303 Dumai');" href="tel:076531303">Kodim 0303 Dumai</a></li>
-				<li><a  onclick="send_data('Penjagaan Dumai');" href="tel:076531110">Penjagaan Dumai</a></li>
-			</ul>
-			<a class="close_mod" onclick="tutup()">Tutup</a> 
-		</div>
-		</div>
-	</div>
+			<a class="tombolya" style="width:100%;" onclick="home()">Home </a>
+  </div>
   <div id="container">    
     <div id="main">
       <div id="outer-circle">
@@ -555,10 +583,11 @@ li:last-child {
           </div>
         </div>
       </div>
-
+<span class="tombolya" style="margin:0"><strong>Sentuh S.O.S <br> Tahan beberapa detik </strong></span>
     </div>
   
   </div>
   
+   
 </body>
 </html>
