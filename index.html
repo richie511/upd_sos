@@ -315,14 +315,13 @@ body,html {
 }
 
 .pagetap {
-    padding-top:10%;
     padding-bottom:10%;
-	margin-top:50%;
+	margin-top:30%;
 	width: 100%;
 	top:        center;
 	bottom:       center;
 	height:     100%;
-	width:      100%;
+	background : red;
 	font-family:'Open Sans', Arial, sans-serif;
 	}
 
@@ -559,13 +558,14 @@ li:last-child {
 	<a class="tombolya" onclick="set()" >SIMPAN</a>
   </div>
   <div id="modal" class="pagetap">
-			<div class="tombolya" style="background:#24fcf9;color:#000000">Terimakasih telah menggunakan Aplikasi S.O.S EMERGENCY Kelurahan STDI.</div>
-			<a class="tombolya" style="text-align:right;" onclick="selanjutnya()">Selanjutnya >> </a></a></a>
+			<div class="tombolya" style="background:#24fcf9;color:#000000;padding-top:20px;padding-bottom:20px;">Terimakasih <br> telah menggunakan Layanan <br>
+			<span style="color:red;">S.O.S EMERGENCY</span> <br>Layanan ini dipersembahkan oleh <br>Kelurahan Simpang Tetap <br>Darul Ikhsan Dumai.</div>
+			<a class="tombolya" style="text-align:right;" onclick="selanjutnya()">Selanjutnya >>  &nbsp;</a>
   </div>
   <div id="nomor" class="texta">
 			<div class="tombolya" style="background:#24fcf9;color:#000000">Berikut Nomor-Nomor Penting : </div>
 			<ul >
-				<li><a  class="linklin" onclick="send_data('Bhabinkamtibmas');" href="tel:085271745043">Bhabinkamtibmas</a></li>
+				<li><a  class="linklin" onclick="send_data('Bhabinkamtibmas STDI');" href="tel:085271745043">Bhabinkamtibmas STDI</a></li>
 				<li><a  class="linklin" onclick="send_data('Polsek Dumai Barat');" href="tel:081378946000">Polsek Dumai Barat</a></li>
 				<li><a  class="linklin" onclick="send_data('BPBD Dumai');" href="tel:076537622">BPBD Dumai</a></li>
 				<li><a  class="linklin" onclick="send_data('Pemadam Kebakaran');" href="tel:076538208">Pemadam Kebakaran</a></li>
